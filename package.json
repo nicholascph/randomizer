@@ -1,0 +1,29 @@
+{
+  "name": "randomizer",
+  "version": "0.0.1",
+  "description": "Randomizer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "nicholaschantcs",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "chairo": "^2.2.0",
+    "ejs": "^2.4.1",
+    "good": "^7.0.0",
+    "good-console": "^6.1.1",
+    "good-squeeze": "^3.0.1",
+    "handlebars": "^4.0.5",
+    "hapi": "^13.4.0",
+    "inert": "^4.0.0",
+    "jquery": "^2.2.3",
+    "semantic-ui": "^2.1.8",
+    "seneca": "^2.0.1",
+    "seneca-web": "^0.7.1",
+    "vision": "^4.1.0",
+    "winston": "^2.2.0"
+  }
+}
