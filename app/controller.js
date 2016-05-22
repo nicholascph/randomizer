@@ -26,6 +26,7 @@ angular.module('secretlib', [])
 
       var noodle = {price:0,sauce:"",noodle:""};
       noodle.base = getRandomItem($scope.base);
+      noodle.id = $scope.items.length;
 
       switch (noodle.base) {
         case "Soup":
@@ -103,8 +104,6 @@ angular.module('secretlib', [])
             noodle: "Hwa Dan hor",
             price: 6.9
           }];
-
-          $scope.items.push(getRandomItem($scope.choice));
           break;
 
         case "特":
@@ -114,8 +113,6 @@ angular.module('secretlib', [])
               {noodle: "猪扒粗炒",price:6.9}, 
               {noodle:"大虾炒米粉",price:6.9}, 
               {noodle:"滑蛋河",price:6.9}];
-              
-          $scope.items.push(getRandomItem($scope.choice));
           break;
       }
 
@@ -130,23 +127,21 @@ angular.module('secretlib', [])
           
         noodle.noodle += noodle.topping + " " + noodle.base + " " + 
           getRandomItem($scope.noodles);
-          
-          console.log(language);
+
           if(language != "english"){
-              console.log(noodle.noodle);
               noodle.noodle = noodle.noodle.replace(/ /gi,'');
-              console.log(noodle.noodle);
-              console.log(noodle)
           }
-          
-        $scope.items.push(noodle);
-          
-          $http.post('saveOrder',noodle).then(function(success){
-              
-          })
-      }
+     }else{
+          noodle = getRandomItem($scope.choice);
+          noodle.id = $scope.items.length;
+     }
+        
+    $scope.items.push(noodle);
+      $http.post('saveOrder',noodle).then(function(success){
+      })
       console.log($scope.items);
-    }
+   
+}
 
     var goLarge = function(noodle) {
         if(noodle.base != "Stir Fried" && noodle.base != "炒"){

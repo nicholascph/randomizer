@@ -68,7 +68,7 @@
 
       <div class="ui vertical stripe">
         <div class="ui four doubling cards infinite">
-          <div ng-repeat="item in items | limitTo : limit" class="card">
+          <div ng-repeat="item in items | orderBy: '-id' | limitTo : limit" class="card">
             <div class="image">
             </div>
             <div class="extra ui four column grid">
